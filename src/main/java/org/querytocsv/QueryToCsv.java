@@ -29,7 +29,7 @@ public class QueryToCsv {
 	// Error messages
 	// ////////////////////////////////////////////////////////////////////////
 	public static final String APPLICATION_NAME = new String("QueryToCsv");
-	public static final String MSG_ABOUT_TITLE = new String(""+ APPLICATION_NAME + " [v0.2.00 2018-03-22] Tool query sql database and export csv file.");
+	public static final String MSG_ABOUT_TITLE = new String(""+ APPLICATION_NAME + " [v00.02.20180324] Tool query sql database and export csv file.");
 	public static final String MSG_MSG_USAGE = new String( "Usage: "+ APPLICATION_NAME + "" );
 	public static final String MSG_MSG_DETAILS = new String( "\n\n");
 	public static final String MSG_ERROR_DATABASETYPE_IS_INVALID = new String ( "SQL database-type '%s' is invalid! Expected values: ['oracle', 'sqlserver', 'postgresql'] ");
@@ -99,7 +99,7 @@ public class QueryToCsv {
 		.setRequired(false)
 		.setShortFlag('o')
 		.setLongFlag(JSAP.NO_LONGFLAG);
-		opt4.setHelp("Oracle JDBC database Url. Example: jdbc:oracle:thin:@localhost:1521;databaseName=orcl;user=owner_user;password=secret.");
+		opt4.setHelp("Oracle JDBC database Url. Example: jdbc:oracle:thin:username/password@localhost:1521:sid");
 		jsap.registerParameter(opt4);
 		
 		// Flag utilizada -p
@@ -108,7 +108,7 @@ public class QueryToCsv {
 		.setRequired(false)
 		.setShortFlag('p')
 		.setLongFlag(JSAP.NO_LONGFLAG);
-		opt5.setHelp("PostgreSQL JDBC database Url. Example: jdbc:postgresql://localhost:5432/dbname?user=username&password=secret&ssl=true.");
+		opt5.setHelp("PostgreSQL JDBC database Url. Example: jdbc:postgresql://localhost:5432/dbname?user=username&password=secret&ssl=true");
 		jsap.registerParameter(opt5);
 
 		
