@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.querytocsv</groupId>
+  <artifactId>querytocsv</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>querytocsv</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Oracle JDBC Driver -->
+    <dependency>
+      <groupId>oracle</groupId>
+      <artifactId>ojdbc6</artifactId>
+      <version>11.2.0.3</version>
+      <scope>system</scope>
+      <systemPath>${pom.basedir}/lib/ojdbc6.jar</systemPath>
+    </dependency>
+    
+	<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+	<dependency>
+	    <groupId>org.postgresql</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>42.0.0.jre7</version>
+	</dependency>
+	
+    <!-- SQLServer JDBC Drive - https://mvnrepository.com/artifact/com.microsoft.sqlserver/sqljdbc4 -->
+	<dependency>
+		<groupId>com.microsoft.sqlserver</groupId>
+		<artifactId>sqljdbc4</artifactId>
+		<version>4.0</version>
+		<scope>system</scope>
+		<systemPath>${pom.basedir}/lib/sqljdbc4.jar</systemPath>
+	</dependency>
+	
+    
+    <!-- MartianSoftware Java Simple Argument Parser -->
+    <dependency>
+      <groupId>martiansoftware</groupId>
+      <artifactId>JSAP</artifactId>
+      <version>2.0.a</version>
+      <scope>system</scope>
+      <systemPath>${pom.basedir}/lib/JSAP-2.0a.jar</systemPath>
+    </dependency>
+    
+  </dependencies>
+</project>
