@@ -75,7 +75,7 @@ Este repositório contém o código fonte do componente **querytocsv**. Este com
 * Exemplo do uso do **querytocsv** com o banco de dados *Oracle*. 
     * Suponha um arquivo 'query-exemplo-oracle.sql' no diretório corrente da aplicação com uma query qualquer no banco de dados Oracle.
 
-````bat
+```bat
 java -jar querytocsv.jar -f query-exemplo-oracle.sql -r query-exemplo-oracle.csv -t oracle -o jdbc:oracle:thin:USER/SECRET123@127.0.0.1:1521:XE
 
 ```
