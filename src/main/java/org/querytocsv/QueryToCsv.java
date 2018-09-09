@@ -29,7 +29,7 @@ public class QueryToCsv {
 	// Error messages
 	// ////////////////////////////////////////////////////////////////////////
 	public static final String APPLICATION_NAME = new String("QueryToCsv");
-	public static final String MSG_ABOUT_TITLE = new String(""+ APPLICATION_NAME + " [v00.02.20180324] Tool query sql database and export csv file.");
+	public static final String MSG_ABOUT_TITLE = new String(""+ APPLICATION_NAME + " [v01.00.20180909] Tool query sql database and export csv file.");
 	public static final String MSG_MSG_USAGE = new String( "Usage: "+ APPLICATION_NAME + "" );
 	public static final String MSG_MSG_DETAILS = new String( "\n\n");
 	public static final String MSG_ERROR_DATABASETYPE_IS_INVALID = new String ( "SQL database-type '%s' is invalid! Expected values: ['oracle', 'sqlserver', 'postgresql'] ");
@@ -118,7 +118,7 @@ public class QueryToCsv {
 		.setRequired(false)
 		.setShortFlag('s')
 		.setLongFlag(JSAP.NO_LONGFLAG);
-		opt1.setHelp("Sqlserver JDBC database Url. Example: jdbc:sqlserver://localhost:1433;user=sa;password=secret123;databaseName=Northwind");
+		opt6.setHelp("Sqlserver JDBC database Url. Example: jdbc:sqlserver://localhost:1433;user=sa;password=secret123;databaseName=Northwind");
 		jsap.registerParameter(opt6);
 
 		
