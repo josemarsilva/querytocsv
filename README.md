@@ -8,25 +8,10 @@ Este repositório contém o código fonte do componente **querytocsv**. Este com
 
 ### 2.1. Diagrama de Caso de Uso (Use Case Diagram) ###
 
-#### 00-ContextDiagram
-![UseCaseDiagram](doc/UseCaseDiagram-00-ContextDiagram.png) 
+#### Diagrama de Caso de Uso
 
+![UseCaseDiagram](doc/UseCaseDiagram%20-%20Context%20-QueryToCsv.png) 
 
-### 2.2. Diagrama de Implantação (Deploy Diagram) ###
-
-#### 00-ContextDiagram ####
-![UseCaseDiagram](doc/DeployDiagram-00-ContextDiagram.png) 
-
-
-### 2.3. Diagrama de Pacotes e Classes (Package and Classes Diagram) ###
-
-#### 00-ContextDiagram ####
-![UseCaseDiagram](doc/PackageDiagram-00-ContextDiagram.png) 
-
-
-### 2.4. Diagrama Modelo Banco de Dados (Database Data Model) ###
-
-* n/a
 
 ### 2.5. Requisitos ###
 
