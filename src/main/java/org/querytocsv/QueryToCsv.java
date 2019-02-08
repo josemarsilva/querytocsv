@@ -28,8 +28,11 @@ public class QueryToCsv {
 	// ////////////////////////////////////////////////////////////////////////
 	// Error messages
 	// ////////////////////////////////////////////////////////////////////////
+	
+	// Constants ...
 	public static final String APPLICATION_NAME = new String("QueryToCsv");
-	public static final String MSG_ABOUT_TITLE = new String(""+ APPLICATION_NAME + " [v01.00.20180909] Tool query sql database and export csv file.");
+	public static final String APPLICATION_VERSION = new String("v.2019.02.07");
+	public static final String MSG_ABOUT_TITLE = new String(""+ APPLICATION_NAME + " - " + APPLICATION_VERSION + " - Tool query sql database and export csv file.");
 	public static final String MSG_MSG_USAGE = new String( "Usage: "+ APPLICATION_NAME + "" );
 	public static final String MSG_MSG_DETAILS = new String( "\n\n");
 	public static final String MSG_ERROR_DATABASETYPE_IS_INVALID = new String ( "SQL database-type '%s' is invalid! Expected values: ['oracle', 'sqlserver', 'postgresql'] ");
@@ -48,6 +51,11 @@ public class QueryToCsv {
 	private final static String ORACLE_JDBC_DRIVER = new String("oracle.jdbc.driver.OracleDriver");
 	private final static String POSTGRESQL_JDBC_DRIVER = new String("org.postgresql.Driver");
 	private final static String SQLSERVER_JDBC_DRIVER = new String("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+	
+	//
+	private final static String NULL_VALUE_CSVRESULT = new String("");
+
+	
 
 	
 	// ////////////////////////////////////////////////////////////////////////
@@ -374,16 +382,28 @@ public class QueryToCsv {
 					
 					if (type == Types.NUMERIC) {
 						csvRow = csvRow + selectResult.getInt(i);
-					}
-					if (type == Types.DATE) {
+					} else if (type == Types.DATE) {
 						csvRow = csvRow + selectResult.getDate(i);
-					}
-					if (type == Types.VARCHAR) {
+					} else if (type == Types.DOUBLE) {
+						Double d_value = selectResult.getDouble(i);
+						Double d_floor = Math.floor(d_value);
+						Double d_decimal = d_value - d_floor;
+						if (d_value==null) {
+							csvRow = csvRow + NULL_VALUE_CSVRESULT;
+						} else if ( d_decimal == (double) 0 ) {
+							csvRow = csvRow + String.format("%.0f", d_value);
+						} else {
+							csvRow = csvRow + String.valueOf(d_value);
+						}
+					} else if (type == Types.VARCHAR) {
+						if (selectResult.getString (i)==null) {
+							csvRow = csvRow + NULL_VALUE_CSVRESULT;
+						} else {
+							csvRow = csvRow + selectResult.getString (i);
+						}
+					} else {
 						csvRow = csvRow + selectResult.getString (i);
-					}
-					if (type == Types.DOUBLE) {
-						csvRow = csvRow + selectResult.getDouble (i);
-					}
+					} 
 										
 				}
 				

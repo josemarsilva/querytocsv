@@ -15,6 +15,7 @@
   </properties>
 
   <dependencies>
+  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -22,14 +23,13 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- Oracle JDBC Driver -->
-    <dependency>
-      <groupId>oracle</groupId>
-      <artifactId>ojdbc7</artifactId>
-      <version>12.1.0.2.0</version>
-      <scope>system</scope>
-      <systemPath>${pom.basedir}/lib/ojdbc7-12.1.0.2.0.jar</systemPath>
-    </dependency>
+	<dependency>
+		<groupId>com.oracle</groupId>
+		<artifactId>ojdbc7</artifactId>
+		<version>12.1.0.2</version>
+		<scope>system</scope>
+		<systemPath>${pom.basedir}/lib/ojdbc7-12.1.0.2.0.jar</systemPath>
+	</dependency>
     
 	<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 	<dependency>
