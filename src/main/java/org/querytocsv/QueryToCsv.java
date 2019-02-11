@@ -31,7 +31,7 @@ public class QueryToCsv {
 	
 	// Constants ...
 	public static final String APPLICATION_NAME = new String("QueryToCsv");
-	public static final String APPLICATION_VERSION = new String("v.2019.02.07");
+	public static final String APPLICATION_VERSION = new String("v.2019.02.08");
 	public static final String MSG_ABOUT_TITLE = new String(""+ APPLICATION_NAME + " - " + APPLICATION_VERSION + " - Tool query sql database and export csv file.");
 	public static final String MSG_MSG_USAGE = new String( "Usage: "+ APPLICATION_NAME + "" );
 	public static final String MSG_MSG_DETAILS = new String( "\n\n");
@@ -375,7 +375,7 @@ public class QueryToCsv {
 					int type = getGenericType (metaData.getColumnType (i));
 					
 					// Write CSV Row: col#1;col#2;..;col#n
-					if (!csvRow.equals("")) {
+					if (i!=1) {
 						csvRow = csvRow + ";";
 					}
 					
