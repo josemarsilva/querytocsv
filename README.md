@@ -57,18 +57,20 @@ mvn install:install-file -Dfile=JSAP-2.0a.jar -DgroupId=martiansoftware -Dartifa
 
 ### 3.6. Guia para Demonstração ###
 
-* n/a
-
-
-### 3.7. Guia para Execução ###
-
-* Exemplo do uso do **querytocsv** com o banco de dados **Oracle**. 
+* Demonstração uso do **querytocsv** com o banco de dados **Oracle**
     * Suponha um arquivo 'query-exemplo-oracle.sql' no diretório corrente da aplicação com uma query qualquer no banco de dados **Oracle**.
 
 ```bat
 java -jar querytocsv.jar -f query-exemplo-oracle.sql -r query-exemplo-oracle.csv -t oracle -o jdbc:oracle:thin:USER/SECRET123@127.0.0.1:1521:XE
-
 ```
+
+* Demonstração de uso do **querytocsv** com o banco de dados **SQLServer**
+    * Suponha um arquivo 'query-sqlserver.sql' no diretório corrente da aplicação com uma query qualquer no banco de dados **SQLServer**.
+
+```bat
+java -jar querytocsv.jar -f query-sqlserver.sql -r query-sqlserver.csv -t sqlserver -s jdbc:sqlserver://localhost:1433;user=sa;password=secret123;databaseName=Northwind
+```
+
 
 
 * O componente **querytocsv** funciona com argumentos de linha de comando (tanto Windows quanto Linux). Com o argumento '-h' mostra o help da a aplicação.
